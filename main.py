@@ -3,6 +3,9 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
+# This is a python clawler demo for beginner, the course  is follow
+# http://mp.weixin.qq.com/mp/homepage?__biz=MzI0OTc0MzAwNA==&hid=4&sn=deb64b8174aabeaf7b2e20cd36a42b99&scene=18#wechat_redirect
+
 import requests
 import json
 import time
