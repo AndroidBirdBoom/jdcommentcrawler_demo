@@ -66,13 +66,19 @@ def insert_sony(craww, sc_comment, sc_score, sc_creatime, sc_name, u_name, sc_ti
     craww.insert_sql(sql)
 
 
+def data_clear(comments):
+    wl = jieba.lcut(comments)
+    wl = " ".join(wl)
+    return wl
+
+
 def create_word_cloud(words):
     coloring = np.array(Image.open('sony.jpg'))
-    wc = WordCloud(background_color="white",max_words=200,mask=coloring,scale=4,max_font_size=50,random_state=42)
+    wc = WordCloud(background_color="white", max_words=200, mask=coloring, scale=4, max_font_size=50, random_state=42)
 
     wc.generate(words)
 
-    plt.imshow(wc,interpolation="bilinear")
+    plt.imshow(wc, interpolation="bilinear")
     plt.axis("off")
     plt.figure()
     plt.show()
@@ -87,6 +93,4 @@ if __name__ == '__main__':
     for res in results:
         comments += res[0]
 
-    wl = jieba.lcut(comments)
-    wl = " ".join(wl)
-    create_word_cloud(wl)
+    create_word_cloud(data_clear(comments))
