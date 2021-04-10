@@ -6,7 +6,7 @@
 import requests
 import json
 import time
-from crawsql import Crawler
+from utils.crawsql import Crawler
 import random
 
 import jieba
